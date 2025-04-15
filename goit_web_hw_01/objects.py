@@ -3,7 +3,7 @@ from datetime import datetime, timedelta
 import pickle
 
 
-class Field(ABC):
+class Field():
     
     def __init__(self, value):
         self.value = value
