@@ -72,13 +72,10 @@ class ConsoleView(AbstractView):
     def birthdays(self, contact: dict):
         return f'Name: {contact["name"]}. Birthday : {contact['birthday']}'
 
-    def show_command(self, commands: list):
-        max_command_length = max(len(item.split(' - ', 1)[0]) for item in commands)
-
-        print(f"| {'Команда'.ljust(max_command_length)} | Опис")
-        print(f"|{'-' * (max_command_length + 2)}|{'-' * 60}")
-
-        for item in commands:
-            command, description = item.split(' - ', 1)
-            print(f"| {command.ljust(max_command_length)} | {description}")
+    def show_command(self, command_descriptions: list):
+        print("\nДоступні команди:")
+        print("-" * 80)
+        for desc in command_descriptions:
+            print(desc)
+        print("-" * 80)
 
