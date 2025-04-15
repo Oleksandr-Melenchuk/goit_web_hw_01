@@ -112,7 +112,7 @@ class Controller:
             self.view.message(self.view.birthdays(birthday))
             
     def show_commands(self, args=None):
-        for _, description in self.commands.values():
-            self.view.message(description)
+        descriptions = [desc for _, desc in self.commands.values()]
+        self.view.show_command(descriptions)
             
                     
